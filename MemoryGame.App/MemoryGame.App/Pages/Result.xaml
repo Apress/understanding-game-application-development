@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoryGame.App.Pages.Result">
+
+    <StackLayout>
+        
+        <Label  Text="How many times did the light blink, the speaker beep and the device vibrate?"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+
+        <StackLayout Orientation="Horizontal" 
+                     Spacing="2" 
+                     HorizontalOptions="Center" 
+                     BackgroundColor="White">
+            
+            <Image x:Name="imgLight" 
+                   Source="lightoff.png" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+            
+            <Image x:Name="imgSpeaker" 
+                   Source="speakeron.png" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+            
+            <Image x:Name="imgHaptic" 
+                   Source="vibration.png" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+        
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Center" 
+                     Spacing="5">
+            
+            <Picker x:Name="pickerLight" 
+                    HorizontalOptions="FillAndExpand" 
+                    WidthRequest="100">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Picker x:Name="pickerSpeaker" 
+                    HorizontalOptions="FillAndExpand" 
+                    WidthRequest="100">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Picker x:Name="pickerHaptic" 
+                    HorizontalOptions="FillAndExpand" 
+                    WidthRequest="100">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+            </Picker>
+            
+        </StackLayout>
+        
+        <Label  x:Name="lblText" 
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Center" 
+                     Spacing="40">
+            
+            <Label  x:Name="lblBlinkCount"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+            
+            <Label  x:Name="lblBeepCount"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+            
+            <Label  x:Name="lblHapticCount"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+            
+        </StackLayout>
+        
+        <Button x:Name="btnSubmit"
+                Text="Submit"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked"/>
+        
+        <Button x:Name="btnRetry"
+                Text="Retry"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnRetryButtonClicked"/>
+        
+    </StackLayout>
+
+</ContentPage>

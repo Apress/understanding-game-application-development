@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoryGame.App.Pages.Home">
+
+    <StackLayout Padding="2">
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                
+                <Label x:Name="lblBest" 
+                       FontSize="Medium" 
+                       HorizontalOptions="StartAndExpand" />
+                
+                <Button x:Name="btnSync" 
+                        Text="Sync" 
+                        Clicked="OnbtnSyncClicked" 
+                        HorizontalOptions="EndAndExpand" 
+                        VerticalOptions="CenterAndExpand" />
+                
+                <Button x:Name="btnLogOut" 
+                        Text="Logout" 
+                        Clicked="OnbtnLogoutClicked" 
+                        HorizontalOptions="EndAndExpand" 
+                        VerticalOptions="CenterAndExpand" />
+            
+            </StackLayout>
+
+            <Label  x:Name="lblTime"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <Label x:Name="lblLevel"
+                FontSize="Small"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        
+        <StackLayout Orientation="Horizontal" 
+                     Spacing="2" 
+                     HorizontalOptions="Center" 
+                     BackgroundColor="White">
+            
+            <Image x:Name="imgLightOff" 
+                   Source="lightoff.png" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+            
+            <Image x:Name="imgLightOff2" 
+                   Source="lightoff.png" 
+                   IsVisible="False" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+            
+            <Image x:Name="imgLightOn" 
+                   Source="lighton.png" 
+                   IsVisible="False" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+            
+            <Image x:Name="imgSpeaker" 
+                   Source="speakeron.png" 
+                   WidthRequest="60" 
+                   HeightRequest="40" />
+            
+            <Image x:Name="imgHaptic" 
+                   Source="vibration.png" 
+                   WidthRequest="60" 
+                   HeightRequest="20" />
+        
+        </StackLayout>
+        
+        <Label  Text="The light will blink on, the speaker will beep and the device will vibrate at different times. Try to count how many times each one happens."
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+
+        <Button x:Name="btnStart"
+                Text="Start"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked"/>
+        
+    </StackLayout>
+
+</ContentPage>

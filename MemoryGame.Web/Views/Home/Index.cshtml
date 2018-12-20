@@ -1,0 +1,71 @@
+﻿<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Leader Board</h1>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h1>
+            <span>
+                Top Challengers
+                <img src="~/Images/goals_256.png" style="width:40px; height:60px;" />
+            </span>
+        </h1>
+        <table id="tblRank" class="table table-striped table-condensed table-hover"></table>
+    </section>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.signalR-2.3.0.min.js")
+    @Scripts.Render("~/signalr/hubs")
+
+    <script type="text/javascript">
+        $(function () {
+            var hubProxy = $.connection.leaderboardHub;
+           
+            hubProxy.client.displayLeaderBoard = function () {
+                LoadResult();
+            };
+
+            $.connection.hub.start();
+            LoadResult();
+        });
+
+        function LoadResult() {
+            var $tbl = $("#tblRank");
+            $.ajax({
+                url: 'http://192.168.0.14:45455/api/game/players',
+                type: 'GET',
+                datatype: 'json',
+                success: function (data) {
+                    if (data.length > 0) {
+                        $tbl.empty();
+                        $tbl.append('<thead><tr><th>Rank</th>'
+                            + '<th></th>' 
+                            + '<th></th>'
+                            + '<th>Best</th>'
+                            + '<th>Achieved</th>'
+                            + '</tr></thead > ');
+
+                        var rows = [];
+                        for (var i = 0; i < data.length; i++) {
+                            rows.push('<tbody><tr><td>'
+                                + (i + 1).toString() + '</td><td>'
+                                + data[i].FirstName + '</td><td>'
+                                + data[i].LastName + '</td><td>'
+                                + data[i].Best + '</td><td>'
+                                + data[i].DateAchieved
+                                + '</td></tr></tbody>');
+                        }
+
+                        $tbl.append(rows.join(''));
+                    }
+                }
+            });
+        }
+    </script>
+}
+

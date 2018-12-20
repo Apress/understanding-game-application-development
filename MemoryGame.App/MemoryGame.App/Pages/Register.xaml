@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoryGame.App.Pages.Register">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label  Text="Working Memory Game"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+
+        <Label  x:Name="lblWelcome" 
+                Text="Register to start the fun, or Log-on to continue the challenge!"
+                FontSize="Small"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        
+        <StackLayout x:Name="layoutChoose" 
+                     Orientation="Horizontal" 
+                     Spacing="5" 
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="Center">
+            
+                <Button x:Name="btnNew"
+                        Text="Register"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Clicked="OnbtnNewClicked"/>
+
+                <Button x:Name="btnReturn"
+                        Text="Log-on"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Clicked="OnbtnReturnClicked"/>
+        </StackLayout>
+
+        <StackLayout x:Name="layoutRegister" 
+                     VerticalOptions="CenterAndExpand" 
+                     IsVisible="False">
+            
+                <Label Text="First Name" />
+                <Entry  x:Name="entryFirstName" />
+                <Label Text="Last Name" />
+                <Entry  x:Name="entryLastName" />
+                <Label Text="Email" />
+                <Entry  x:Name="entryEmail" />
+
+                <StackLayout  Orientation="Horizontal" 
+                              Spacing="3" 
+                              HorizontalOptions="Center">
+                    
+                    <Button x:Name="btnRegister"
+                            Text="Let's Do This!"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            Clicked="OnbtnRegisterClicked"/>
+                    
+                    <Button x:Name="btnCancelRegister"
+                            Text="Cancel"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            Clicked="OnbtnCancelRegisterClicked"/>
+                    
+                </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="layoutLogin" 
+                     VerticalOptions="CenterAndExpand" 
+                     IsVisible="False">
+            
+                <Label Text="Email" />
+                <Entry  x:Name="entryExistingEmail" />
+
+                 <StackLayout  Orientation="Horizontal" Spacing="3" HorizontalOptions="Center">
+                     
+                    <Button x:Name="btnLogin"
+                            Text="Let me in!"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            Clicked="OnbtnLoginClicked"/>
+                     
+                    <Button x:Name="btnCancelLogin"
+                            Text="Cancel"
+                            HorizontalOptions="Center"
+                             VerticalOptions="CenterAndExpand"
+                            Clicked="OnbtnCancelLoginClicked"/>
+                     
+                </StackLayout>  
+            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
